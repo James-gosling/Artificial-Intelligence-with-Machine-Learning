@@ -1,0 +1,123 @@
+PROYECTO ID3 — Actividad 2
+Rodrigo Valdespino Vertiz | ID: 00520621
+Carrera: Ingeniería en Tecnologías de la Información y Negocios Digitales
+Archivo: data/proporcionados/play8.csv | Registros: 14 | Objetivo: risk
+H(S)=-sum(p*log2(p)); H(Y|A)=sum(|Sv|/|S|*H(Sv)); IG=H(S)-H(Y|A)
+
+NODO RAÍZ | n=14 | clases={high=6, moderate=3, low=5} | H(S)=1.530619 bits
+  Variable Credit History | H(Credit History)=1.577406 bits
+    Credit History=bad: n=4, clases={high=3, moderate=1}, H(Sv)=0.811278, peso=4/14, aporte=0.231794
+    Credit History=unknown: n=5, clases={high=2, moderate=1, low=2}, H(Sv)=1.521928, peso=5/14, aporte=0.543546
+    Credit History=good: n=5, clases={low=3, high=1, moderate=1}, H(Sv)=1.370951, peso=5/14, aporte=0.489625
+    H(risk | Credit History)=1.264965 | IG=1.530619 - 1.264965 = 0.265654 bits
+  Variable Debt | H(Debt)=1.000000 bits
+    Debt=high: n=7, clases={high=4, low=2, moderate=1}, H(Sv)=1.378783, peso=7/14, aporte=0.689392
+    Debt=low: n=7, clases={moderate=2, high=2, low=3}, H(Sv)=1.556657, peso=7/14, aporte=0.778328
+    H(risk | Debt)=1.467720 | IG=1.530619 - 1.467720 = 0.062899 bits
+  Variable Colleteral | H(Colleteral)=0.749595 bits
+    Colleteral=none: n=11, clases={high=6, moderate=2, low=3}, H(Sv)=1.435371, peso=11/14, aporte=1.127792
+    Colleteral=adequate: n=3, clases={low=2, moderate=1}, H(Sv)=0.918296, peso=3/14, aporte=0.196778
+    H(risk | Colleteral)=1.324569 | IG=1.530619 - 1.324569 = 0.206050 bits
+  Variable Income | H(Income)=1.556657 bits
+    Income=$0 to $15k: n=4, clases={high=4}, H(Sv)=0.000000, peso=4/14, aporte=0.000000
+    Income=$15 to $35k: n=4, clases={high=2, moderate=2}, H(Sv)=1.000000, peso=4/14, aporte=0.285714
+    Income=over $35k: n=6, clases={low=5, moderate=1}, H(Sv)=0.650022, peso=6/14, aporte=0.278581
+    H(risk | Income)=0.564295 | IG=1.530619 - 0.564295 = 0.966324 bits
+  ELEGIDA: Income (IG=0.966324)
+
+NODO RAÍZ / Income=$0 to $15k | n=4 | clases={high=4} | H(S)=0.000000 bits
+Hoja pura: high
+
+NODO RAÍZ / Income=$15 to $35k | n=4 | clases={high=2, moderate=2} | H(S)=1.000000 bits
+  Variable Credit History | H(Credit History)=1.500000 bits
+    Credit History=unknown: n=2, clases={high=1, moderate=1}, H(Sv)=1.000000, peso=2/4, aporte=0.500000
+    Credit History=good: n=1, clases={moderate=1}, H(Sv)=0.000000, peso=1/4, aporte=0.000000
+    Credit History=bad: n=1, clases={high=1}, H(Sv)=0.000000, peso=1/4, aporte=0.000000
+    H(risk | Credit History)=0.500000 | IG=1.000000 - 0.500000 = 0.500000 bits
+  Variable Debt | H(Debt)=0.811278 bits
+    Debt=high: n=3, clases={high=2, moderate=1}, H(Sv)=0.918296, peso=3/4, aporte=0.688722
+    Debt=low: n=1, clases={moderate=1}, H(Sv)=0.000000, peso=1/4, aporte=0.000000
+    H(risk | Debt)=0.688722 | IG=1.000000 - 0.688722 = 0.311278 bits
+  Variable Colleteral | H(Colleteral)=0.000000 bits
+    Colleteral=none: n=4, clases={high=2, moderate=2}, H(Sv)=1.000000, peso=4/4, aporte=1.000000
+    H(risk | Colleteral)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  ELEGIDA: Credit History (IG=0.500000)
+
+NODO RAÍZ / Income=$15 to $35k / Credit History=unknown | n=2 | clases={high=1, moderate=1} | H(S)=1.000000 bits
+  Variable Debt | H(Debt)=1.000000 bits
+    Debt=high: n=1, clases={high=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    Debt=low: n=1, clases={moderate=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    H(risk | Debt)=0.000000 | IG=1.000000 - 0.000000 = 1.000000 bits
+  Variable Colleteral | H(Colleteral)=0.000000 bits
+    Colleteral=none: n=2, clases={high=1, moderate=1}, H(Sv)=1.000000, peso=2/2, aporte=1.000000
+    H(risk | Colleteral)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  ELEGIDA: Debt (IG=1.000000)
+
+NODO RAÍZ / Income=$15 to $35k / Credit History=unknown / Debt=high | n=1 | clases={high=1} | H(S)=0.000000 bits
+Hoja pura: high
+
+NODO RAÍZ / Income=$15 to $35k / Credit History=unknown / Debt=low | n=1 | clases={moderate=1} | H(S)=0.000000 bits
+Hoja pura: moderate
+
+NODO RAÍZ / Income=$15 to $35k / Credit History=good | n=1 | clases={moderate=1} | H(S)=0.000000 bits
+Hoja pura: moderate
+
+NODO RAÍZ / Income=$15 to $35k / Credit History=bad | n=1 | clases={high=1} | H(S)=0.000000 bits
+Hoja pura: high
+
+NODO RAÍZ / Income=over $35k | n=6 | clases={low=5, moderate=1} | H(S)=0.650022 bits
+  Variable Credit History | H(Credit History)=1.459148 bits
+    Credit History=unknown: n=2, clases={low=2}, H(Sv)=0.000000, peso=2/6, aporte=0.000000
+    Credit History=bad: n=1, clases={moderate=1}, H(Sv)=0.000000, peso=1/6, aporte=0.000000
+    Credit History=good: n=3, clases={low=3}, H(Sv)=0.000000, peso=3/6, aporte=0.000000
+    H(risk | Credit History)=0.000000 | IG=0.650022 - 0.000000 = 0.650022 bits
+  Variable Debt | H(Debt)=0.918296 bits
+    Debt=low: n=4, clases={low=3, moderate=1}, H(Sv)=0.811278, peso=4/6, aporte=0.540852
+    Debt=high: n=2, clases={low=2}, H(Sv)=0.000000, peso=2/6, aporte=0.000000
+    H(risk | Debt)=0.540852 | IG=0.650022 - 0.540852 = 0.109170 bits
+  Variable Colleteral | H(Colleteral)=1.000000 bits
+    Colleteral=none: n=3, clases={low=3}, H(Sv)=0.000000, peso=3/6, aporte=0.000000
+    Colleteral=adequate: n=3, clases={low=2, moderate=1}, H(Sv)=0.918296, peso=3/6, aporte=0.459148
+    H(risk | Colleteral)=0.459148 | IG=0.650022 - 0.459148 = 0.190875 bits
+  ELEGIDA: Credit History (IG=0.650022)
+
+NODO RAÍZ / Income=over $35k / Credit History=unknown | n=2 | clases={low=2} | H(S)=0.000000 bits
+Hoja pura: low
+
+NODO RAÍZ / Income=over $35k / Credit History=bad | n=1 | clases={moderate=1} | H(S)=0.000000 bits
+Hoja pura: moderate
+
+NODO RAÍZ / Income=over $35k / Credit History=good | n=3 | clases={low=3} | H(S)=0.000000 bits
+Hoja pura: low
+
+ÁRBOL DE DECISIÓN
+[Income]
+  $0 to $15k -> Clase = high
+  $15 to $35k -> [Credit History]
+    unknown -> [Debt]
+      high -> Clase = high
+      low -> Clase = moderate
+    good -> Clase = moderate
+    bad -> Clase = high
+  over $35k -> [Credit History]
+    unknown -> Clase = low
+    bad -> Clase = moderate
+    good -> Clase = low
+
+COMPROBACIÓN SOBRE DATOS DE ENTRENAMIENTO
+  Registro 1: real=high, predicción=high, OK
+  Registro 2: real=high, predicción=high, OK
+  Registro 3: real=moderate, predicción=moderate, OK
+  Registro 4: real=high, predicción=high, OK
+  Registro 5: real=low, predicción=low, OK
+  Registro 6: real=low, predicción=low, OK
+  Registro 7: real=high, predicción=high, OK
+  Registro 8: real=moderate, predicción=moderate, OK
+  Registro 9: real=low, predicción=low, OK
+  Registro 10: real=low, predicción=low, OK
+  Registro 11: real=high, predicción=high, OK
+  Registro 12: real=moderate, predicción=moderate, OK
+  Registro 13: real=low, predicción=low, OK
+  Registro 14: real=high, predicción=high, OK
+Aciertos de entrenamiento: 14/14 (100.00%)
+Esta comprobación no mide la capacidad de generalizar a datos nuevos.

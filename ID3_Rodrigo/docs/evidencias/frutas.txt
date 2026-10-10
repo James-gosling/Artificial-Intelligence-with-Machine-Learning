@@ -1,0 +1,60 @@
+PROYECTO ID3 — Actividad 2
+Rodrigo Valdespino Vertiz | ID: 00520621
+Carrera: Ingeniería en Tecnologías de la Información y Negocios Digitales
+Archivo: data/frutas.csv | Registros: 6 | Objetivo: Fruta
+H(S)=-sum(p*log2(p)); H(Y|A)=sum(|Sv|/|S|*H(Sv)); IG=H(S)-H(Y|A)
+
+NODO RAÍZ | n=6 | clases={Manzana=2, Plátano=2, Naranja=2} | H(S)=1.584963 bits
+  Variable Color | H(Color)=1.918296 bits
+    Color=Rojo: n=1, clases={Manzana=1}, H(Sv)=0.000000, peso=1/6, aporte=0.000000
+    Color=Verde: n=2, clases={Manzana=1, Plátano=1}, H(Sv)=1.000000, peso=2/6, aporte=0.333333
+    Color=Amarillo: n=1, clases={Plátano=1}, H(Sv)=0.000000, peso=1/6, aporte=0.000000
+    Color=Naranja: n=2, clases={Naranja=2}, H(Sv)=0.000000, peso=2/6, aporte=0.000000
+    H(Fruta | Color)=0.333333 | IG=1.584963 - 0.333333 = 1.251629 bits
+  Variable Forma | H(Forma)=1.459148 bits
+    Forma=Redonda: n=3, clases={Manzana=2, Naranja=1}, H(Sv)=0.918296, peso=3/6, aporte=0.459148
+    Forma=Alargada: n=2, clases={Plátano=2}, H(Sv)=0.000000, peso=2/6, aporte=0.000000
+    Forma=Ovalada: n=1, clases={Naranja=1}, H(Sv)=0.000000, peso=1/6, aporte=0.000000
+    H(Fruta | Forma)=0.459148 | IG=1.584963 - 0.459148 = 1.125815 bits
+  ELEGIDA: Color (IG=1.251629)
+
+NODO RAÍZ / Color=Rojo | n=1 | clases={Manzana=1} | H(S)=0.000000 bits
+Hoja pura: Manzana
+
+NODO RAÍZ / Color=Verde | n=2 | clases={Manzana=1, Plátano=1} | H(S)=1.000000 bits
+  Variable Forma | H(Forma)=1.000000 bits
+    Forma=Redonda: n=1, clases={Manzana=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    Forma=Alargada: n=1, clases={Plátano=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    H(Fruta | Forma)=0.000000 | IG=1.000000 - 0.000000 = 1.000000 bits
+  ELEGIDA: Forma (IG=1.000000)
+
+NODO RAÍZ / Color=Verde / Forma=Redonda | n=1 | clases={Manzana=1} | H(S)=0.000000 bits
+Hoja pura: Manzana
+
+NODO RAÍZ / Color=Verde / Forma=Alargada | n=1 | clases={Plátano=1} | H(S)=0.000000 bits
+Hoja pura: Plátano
+
+NODO RAÍZ / Color=Amarillo | n=1 | clases={Plátano=1} | H(S)=0.000000 bits
+Hoja pura: Plátano
+
+NODO RAÍZ / Color=Naranja | n=2 | clases={Naranja=2} | H(S)=0.000000 bits
+Hoja pura: Naranja
+
+ÁRBOL DE DECISIÓN
+[Color]
+  Rojo -> Clase = Manzana
+  Verde -> [Forma]
+    Redonda -> Clase = Manzana
+    Alargada -> Clase = Plátano
+  Amarillo -> Clase = Plátano
+  Naranja -> Clase = Naranja
+
+COMPROBACIÓN SOBRE DATOS DE ENTRENAMIENTO
+  Registro 1: real=Manzana, predicción=Manzana, OK
+  Registro 2: real=Manzana, predicción=Manzana, OK
+  Registro 3: real=Plátano, predicción=Plátano, OK
+  Registro 4: real=Plátano, predicción=Plátano, OK
+  Registro 5: real=Naranja, predicción=Naranja, OK
+  Registro 6: real=Naranja, predicción=Naranja, OK
+Aciertos de entrenamiento: 6/6 (100.00%)
+Esta comprobación no mide la capacidad de generalizar a datos nuevos.

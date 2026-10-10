@@ -1,0 +1,25 @@
+PROYECTO ID3 — Actividad 2
+Rodrigo Valdespino Vertiz | ID: 00520621
+Carrera: Ingeniería en Tecnologías de la Información y Negocios Digitales
+Archivo: data/contradictorios.csv | Registros: 3 | Objetivo: Clase
+H(S)=-sum(p*log2(p)); H(Y|A)=sum(|Sv|/|S|*H(Sv)); IG=H(S)-H(Y|A)
+
+NODO RAÍZ | n=3 | clases={Sí=2, No=1} | H(S)=0.918296 bits
+  Variable Color | H(Color)=0.000000 bits
+    Color=Rojo: n=3, clases={Sí=2, No=1}, H(Sv)=0.918296, peso=3/3, aporte=0.918296
+    H(Clase | Color)=0.918296 | IG=0.918296 - 0.918296 = 0.000000 bits
+  ELEGIDA: Color (IG=0.000000)
+
+NODO RAÍZ / Color=Rojo | n=3 | clases={Sí=2, No=1} | H(S)=0.918296 bits
+Sin atributos: clase mayoritaria = Sí
+
+ÁRBOL DE DECISIÓN
+[Color]
+  Rojo -> Clase = Sí
+
+COMPROBACIÓN SOBRE DATOS DE ENTRENAMIENTO
+  Registro 1: real=Sí, predicción=Sí, OK
+  Registro 2: real=No, predicción=Sí, DIFERENTE
+  Registro 3: real=Sí, predicción=Sí, OK
+Aciertos de entrenamiento: 2/3 (66.67%)
+Esta comprobación no mide la capacidad de generalizar a datos nuevos.

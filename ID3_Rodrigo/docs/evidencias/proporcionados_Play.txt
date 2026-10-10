@@ -1,0 +1,100 @@
+PROYECTO ID3 — Actividad 2
+Rodrigo Valdespino Vertiz | ID: 00520621
+Carrera: Ingeniería en Tecnologías de la Información y Negocios Digitales
+Archivo: data/proporcionados/Play.csv | Registros: 14 | Objetivo: Play
+H(S)=-sum(p*log2(p)); H(Y|A)=sum(|Sv|/|S|*H(Sv)); IG=H(S)-H(Y|A)
+
+NODO RAÍZ | n=14 | clases={No=5, Yes=9} | H(S)=0.940286 bits
+  Variable Outlook | H(Outlook)=1.577406 bits
+    Outlook=Sunny: n=5, clases={No=3, Yes=2}, H(Sv)=0.970951, peso=5/14, aporte=0.346768
+    Outlook=Overcast: n=4, clases={Yes=4}, H(Sv)=0.000000, peso=4/14, aporte=0.000000
+    Outlook=Rain: n=5, clases={Yes=3, No=2}, H(Sv)=0.970951, peso=5/14, aporte=0.346768
+    H(Play | Outlook)=0.693536 | IG=0.940286 - 0.693536 = 0.246750 bits
+  Variable Temperature | H(Temperature)=1.556657 bits
+    Temperature=Hot: n=4, clases={No=2, Yes=2}, H(Sv)=1.000000, peso=4/14, aporte=0.285714
+    Temperature=Mild: n=6, clases={Yes=4, No=2}, H(Sv)=0.918296, peso=6/14, aporte=0.393555
+    Temperature=Cold: n=4, clases={Yes=3, No=1}, H(Sv)=0.811278, peso=4/14, aporte=0.231794
+    H(Play | Temperature)=0.911063 | IG=0.940286 - 0.911063 = 0.029223 bits
+  Variable Humidity | H(Humidity)=1.000000 bits
+    Humidity=High: n=7, clases={No=4, Yes=3}, H(Sv)=0.985228, peso=7/14, aporte=0.492614
+    Humidity=Normal: n=7, clases={Yes=6, No=1}, H(Sv)=0.591673, peso=7/14, aporte=0.295836
+    H(Play | Humidity)=0.788450 | IG=0.940286 - 0.788450 = 0.151836 bits
+  Variable Wind | H(Wind)=0.985228 bits
+    Wind=Weak: n=8, clases={No=2, Yes=6}, H(Sv)=0.811278, peso=8/14, aporte=0.463587
+    Wind=Strong: n=6, clases={No=3, Yes=3}, H(Sv)=1.000000, peso=6/14, aporte=0.428571
+    H(Play | Wind)=0.892159 | IG=0.940286 - 0.892159 = 0.048127 bits
+  ELEGIDA: Outlook (IG=0.246750)
+
+NODO RAÍZ / Outlook=Sunny | n=5 | clases={No=3, Yes=2} | H(S)=0.970951 bits
+  Variable Temperature | H(Temperature)=1.521928 bits
+    Temperature=Hot: n=2, clases={No=2}, H(Sv)=0.000000, peso=2/5, aporte=0.000000
+    Temperature=Mild: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/5, aporte=0.400000
+    Temperature=Cold: n=1, clases={Yes=1}, H(Sv)=0.000000, peso=1/5, aporte=0.000000
+    H(Play | Temperature)=0.400000 | IG=0.970951 - 0.400000 = 0.570951 bits
+  Variable Humidity | H(Humidity)=0.970951 bits
+    Humidity=High: n=3, clases={No=3}, H(Sv)=0.000000, peso=3/5, aporte=0.000000
+    Humidity=Normal: n=2, clases={Yes=2}, H(Sv)=0.000000, peso=2/5, aporte=0.000000
+    H(Play | Humidity)=0.000000 | IG=0.970951 - 0.000000 = 0.970951 bits
+  Variable Wind | H(Wind)=0.970951 bits
+    Wind=Weak: n=3, clases={No=2, Yes=1}, H(Sv)=0.918296, peso=3/5, aporte=0.550978
+    Wind=Strong: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/5, aporte=0.400000
+    H(Play | Wind)=0.950978 | IG=0.970951 - 0.950978 = 0.019973 bits
+  ELEGIDA: Humidity (IG=0.970951)
+
+NODO RAÍZ / Outlook=Sunny / Humidity=High | n=3 | clases={No=3} | H(S)=0.000000 bits
+Hoja pura: No
+
+NODO RAÍZ / Outlook=Sunny / Humidity=Normal | n=2 | clases={Yes=2} | H(S)=0.000000 bits
+Hoja pura: Yes
+
+NODO RAÍZ / Outlook=Overcast | n=4 | clases={Yes=4} | H(S)=0.000000 bits
+Hoja pura: Yes
+
+NODO RAÍZ / Outlook=Rain | n=5 | clases={Yes=3, No=2} | H(S)=0.970951 bits
+  Variable Temperature | H(Temperature)=0.970951 bits
+    Temperature=Mild: n=3, clases={Yes=2, No=1}, H(Sv)=0.918296, peso=3/5, aporte=0.550978
+    Temperature=Cold: n=2, clases={Yes=1, No=1}, H(Sv)=1.000000, peso=2/5, aporte=0.400000
+    H(Play | Temperature)=0.950978 | IG=0.970951 - 0.950978 = 0.019973 bits
+  Variable Humidity | H(Humidity)=0.970951 bits
+    Humidity=High: n=2, clases={Yes=1, No=1}, H(Sv)=1.000000, peso=2/5, aporte=0.400000
+    Humidity=Normal: n=3, clases={Yes=2, No=1}, H(Sv)=0.918296, peso=3/5, aporte=0.550978
+    H(Play | Humidity)=0.950978 | IG=0.970951 - 0.950978 = 0.019973 bits
+  Variable Wind | H(Wind)=0.970951 bits
+    Wind=Weak: n=3, clases={Yes=3}, H(Sv)=0.000000, peso=3/5, aporte=0.000000
+    Wind=Strong: n=2, clases={No=2}, H(Sv)=0.000000, peso=2/5, aporte=0.000000
+    H(Play | Wind)=0.000000 | IG=0.970951 - 0.000000 = 0.970951 bits
+  ELEGIDA: Wind (IG=0.970951)
+
+NODO RAÍZ / Outlook=Rain / Wind=Weak | n=3 | clases={Yes=3} | H(S)=0.000000 bits
+Hoja pura: Yes
+
+NODO RAÍZ / Outlook=Rain / Wind=Strong | n=2 | clases={No=2} | H(S)=0.000000 bits
+Hoja pura: No
+
+ÁRBOL DE DECISIÓN
+[Outlook]
+  Sunny -> [Humidity]
+    High -> Clase = No
+    Normal -> Clase = Yes
+  Overcast -> Clase = Yes
+  Rain -> [Wind]
+    Weak -> Clase = Yes
+    Strong -> Clase = No
+
+COMPROBACIÓN SOBRE DATOS DE ENTRENAMIENTO
+  Registro 1: real=No, predicción=No, OK
+  Registro 2: real=No, predicción=No, OK
+  Registro 3: real=Yes, predicción=Yes, OK
+  Registro 4: real=Yes, predicción=Yes, OK
+  Registro 5: real=Yes, predicción=Yes, OK
+  Registro 6: real=No, predicción=No, OK
+  Registro 7: real=Yes, predicción=Yes, OK
+  Registro 8: real=No, predicción=No, OK
+  Registro 9: real=Yes, predicción=Yes, OK
+  Registro 10: real=Yes, predicción=Yes, OK
+  Registro 11: real=Yes, predicción=Yes, OK
+  Registro 12: real=Yes, predicción=Yes, OK
+  Registro 13: real=Yes, predicción=Yes, OK
+  Registro 14: real=No, predicción=No, OK
+Aciertos de entrenamiento: 14/14 (100.00%)
+Esta comprobación no mide la capacidad de generalizar a datos nuevos.

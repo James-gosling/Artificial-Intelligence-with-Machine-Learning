@@ -1,0 +1,208 @@
+PROYECTO ID3 — Actividad 2
+Rodrigo Valdespino Vertiz | ID: 00520621
+Carrera: Ingeniería en Tecnologías de la Información y Negocios Digitales
+Archivo: data/proporcionados/play7.csv | Registros: 12 | Objetivo: Wait
+H(S)=-sum(p*log2(p)); H(Y|A)=sum(|Sv|/|S|*H(Sv)); IG=H(S)-H(Y|A)
+
+NODO RAÍZ | n=12 | clases={Yes=6, No=6} | H(S)=1.000000 bits
+  Variable Alternate | H(Alternate)=1.000000 bits
+    Alternate=Yes: n=6, clases={Yes=3, No=3}, H(Sv)=1.000000, peso=6/12, aporte=0.500000
+    Alternate=No: n=6, clases={Yes=3, No=3}, H(Sv)=1.000000, peso=6/12, aporte=0.500000
+    H(Wait | Alternate)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  Variable Bar | H(Bar)=1.000000 bits
+    Bar=No: n=6, clases={Yes=3, No=3}, H(Sv)=1.000000, peso=6/12, aporte=0.500000
+    Bar=Yes: n=6, clases={Yes=3, No=3}, H(Sv)=1.000000, peso=6/12, aporte=0.500000
+    H(Wait | Bar)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  Variable Fri/Sat | H(Fri/Sat)=0.979869 bits
+    Fri/Sat=No: n=7, clases={Yes=4, No=3}, H(Sv)=0.985228, peso=7/12, aporte=0.574716
+    Fri/Sat=Yes: n=5, clases={Yes=2, No=3}, H(Sv)=0.970951, peso=5/12, aporte=0.404563
+    H(Wait | Fri/Sat)=0.979279 | IG=1.000000 - 0.979279 = 0.020721 bits
+  Variable Hungry | H(Hungry)=0.979869 bits
+    Hungry=Yes: n=7, clases={Yes=5, No=2}, H(Sv)=0.863121, peso=7/12, aporte=0.503487
+    Hungry=No: n=5, clases={Yes=1, No=4}, H(Sv)=0.721928, peso=5/12, aporte=0.300803
+    H(Wait | Hungry)=0.804290 | IG=1.000000 - 0.804290 = 0.195710 bits
+  Variable Patrons | H(Patrons)=1.459148 bits
+    Patrons=Some: n=4, clases={Yes=4}, H(Sv)=0.000000, peso=4/12, aporte=0.000000
+    Patrons=Full: n=6, clases={No=4, Yes=2}, H(Sv)=0.918296, peso=6/12, aporte=0.459148
+    Patrons=None: n=2, clases={No=2}, H(Sv)=0.000000, peso=2/12, aporte=0.000000
+    H(Wait | Patrons)=0.459148 | IG=1.000000 - 0.459148 = 0.540852 bits
+  Variable Price | H(Price)=1.384432 bits
+    Price=£££: n=3, clases={Yes=1, No=2}, H(Sv)=0.918296, peso=3/12, aporte=0.229574
+    Price=£: n=7, clases={No=4, Yes=3}, H(Sv)=0.985228, peso=7/12, aporte=0.574716
+    Price=££: n=2, clases={Yes=2}, H(Sv)=0.000000, peso=2/12, aporte=0.000000
+    H(Wait | Price)=0.804290 | IG=1.000000 - 0.804290 = 0.195710 bits
+  Variable Raining | H(Raining)=0.979869 bits
+    Raining=No: n=7, clases={Yes=3, No=4}, H(Sv)=0.985228, peso=7/12, aporte=0.574716
+    Raining=Yes: n=5, clases={Yes=3, No=2}, H(Sv)=0.970951, peso=5/12, aporte=0.404563
+    H(Wait | Raining)=0.979279 | IG=1.000000 - 0.979279 = 0.020721 bits
+  Variable Reservation | H(Reservation)=0.979869 bits
+    Reservation=Yes: n=5, clases={Yes=3, No=2}, H(Sv)=0.970951, peso=5/12, aporte=0.404563
+    Reservation=No: n=7, clases={No=4, Yes=3}, H(Sv)=0.985228, peso=7/12, aporte=0.574716
+    H(Wait | Reservation)=0.979279 | IG=1.000000 - 0.979279 = 0.020721 bits
+  Variable Type | H(Type)=1.918296 bits
+    Type=French: n=2, clases={Yes=1, No=1}, H(Sv)=1.000000, peso=2/12, aporte=0.166667
+    Type=Thai: n=4, clases={No=2, Yes=2}, H(Sv)=1.000000, peso=4/12, aporte=0.333333
+    Type=Burger: n=4, clases={Yes=2, No=2}, H(Sv)=1.000000, peso=4/12, aporte=0.333333
+    Type=Italian: n=2, clases={Yes=1, No=1}, H(Sv)=1.000000, peso=2/12, aporte=0.166667
+    H(Wait | Type)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  Variable Wait Esttimate | H(Wait Esttimate)=1.792481 bits
+    Wait Esttimate=0-10: n=6, clases={Yes=4, No=2}, H(Sv)=0.918296, peso=6/12, aporte=0.459148
+    Wait Esttimate=30-60: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/12, aporte=0.166667
+    Wait Esttimate=10-30: n=2, clases={Yes=1, No=1}, H(Sv)=1.000000, peso=2/12, aporte=0.166667
+    Wait Esttimate=>60: n=2, clases={No=2}, H(Sv)=0.000000, peso=2/12, aporte=0.000000
+    H(Wait | Wait Esttimate)=0.792481 | IG=1.000000 - 0.792481 = 0.207519 bits
+  ELEGIDA: Patrons (IG=0.540852)
+
+NODO RAÍZ / Patrons=Some | n=4 | clases={Yes=4} | H(S)=0.000000 bits
+Hoja pura: Yes
+
+NODO RAÍZ / Patrons=Full | n=6 | clases={No=4, Yes=2} | H(S)=0.918296 bits
+  Variable Alternate | H(Alternate)=0.650022 bits
+    Alternate=Yes: n=5, clases={No=3, Yes=2}, H(Sv)=0.970951, peso=5/6, aporte=0.809125
+    Alternate=No: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/6, aporte=0.000000
+    H(Wait | Alternate)=0.809125 | IG=0.918296 - 0.809125 = 0.109170 bits
+  Variable Bar | H(Bar)=1.000000 bits
+    Bar=No: n=3, clases={No=2, Yes=1}, H(Sv)=0.918296, peso=3/6, aporte=0.459148
+    Bar=Yes: n=3, clases={No=2, Yes=1}, H(Sv)=0.918296, peso=3/6, aporte=0.459148
+    H(Wait | Bar)=0.918296 | IG=0.918296 - 0.918296 = 0.000000 bits
+  Variable Fri/Sat | H(Fri/Sat)=0.650022 bits
+    Fri/Sat=No: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/6, aporte=0.000000
+    Fri/Sat=Yes: n=5, clases={Yes=2, No=3}, H(Sv)=0.970951, peso=5/6, aporte=0.809125
+    H(Wait | Fri/Sat)=0.809125 | IG=0.918296 - 0.809125 = 0.109170 bits
+  Variable Hungry | H(Hungry)=0.918296 bits
+    Hungry=Yes: n=4, clases={No=2, Yes=2}, H(Sv)=1.000000, peso=4/6, aporte=0.666667
+    Hungry=No: n=2, clases={No=2}, H(Sv)=0.000000, peso=2/6, aporte=0.000000
+    H(Wait | Hungry)=0.666667 | IG=0.918296 - 0.666667 = 0.251629 bits
+  Variable Price | H(Price)=0.918296 bits
+    Price=£: n=4, clases={No=2, Yes=2}, H(Sv)=1.000000, peso=4/6, aporte=0.666667
+    Price=£££: n=2, clases={No=2}, H(Sv)=0.000000, peso=2/6, aporte=0.000000
+    H(Wait | Price)=0.666667 | IG=0.918296 - 0.666667 = 0.251629 bits
+  Variable Raining | H(Raining)=0.918296 bits
+    Raining=No: n=4, clases={No=3, Yes=1}, H(Sv)=0.811278, peso=4/6, aporte=0.540852
+    Raining=Yes: n=2, clases={Yes=1, No=1}, H(Sv)=1.000000, peso=2/6, aporte=0.333333
+    H(Wait | Raining)=0.874185 | IG=0.918296 - 0.874185 = 0.044110 bits
+  Variable Reservation | H(Reservation)=0.918296 bits
+    Reservation=No: n=4, clases={No=2, Yes=2}, H(Sv)=1.000000, peso=4/6, aporte=0.666667
+    Reservation=Yes: n=2, clases={No=2}, H(Sv)=0.000000, peso=2/6, aporte=0.000000
+    H(Wait | Reservation)=0.666667 | IG=0.918296 - 0.666667 = 0.251629 bits
+  Variable Type | H(Type)=1.918296 bits
+    Type=Thai: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/6, aporte=0.333333
+    Type=French: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/6, aporte=0.000000
+    Type=Burger: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/6, aporte=0.333333
+    Type=Italian: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/6, aporte=0.000000
+    H(Wait | Type)=0.666667 | IG=0.918296 - 0.666667 = 0.251629 bits
+  Variable Wait Esttimate | H(Wait Esttimate)=1.584963 bits
+    Wait Esttimate=30-60: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/6, aporte=0.333333
+    Wait Esttimate=10-30: n=2, clases={Yes=1, No=1}, H(Sv)=1.000000, peso=2/6, aporte=0.333333
+    Wait Esttimate=>60: n=2, clases={No=2}, H(Sv)=0.000000, peso=2/6, aporte=0.000000
+    H(Wait | Wait Esttimate)=0.666667 | IG=0.918296 - 0.666667 = 0.251629 bits
+  ELEGIDA: Hungry (IG=0.251629)
+
+NODO RAÍZ / Patrons=Full / Hungry=Yes | n=4 | clases={No=2, Yes=2} | H(S)=1.000000 bits
+  Variable Alternate | H(Alternate)=0.000000 bits
+    Alternate=Yes: n=4, clases={No=2, Yes=2}, H(Sv)=1.000000, peso=4/4, aporte=1.000000
+    H(Wait | Alternate)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  Variable Bar | H(Bar)=1.000000 bits
+    Bar=No: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/4, aporte=0.500000
+    Bar=Yes: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/4, aporte=0.500000
+    H(Wait | Bar)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  Variable Fri/Sat | H(Fri/Sat)=0.811278 bits
+    Fri/Sat=No: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/4, aporte=0.000000
+    Fri/Sat=Yes: n=3, clases={Yes=2, No=1}, H(Sv)=0.918296, peso=3/4, aporte=0.688722
+    H(Wait | Fri/Sat)=0.688722 | IG=1.000000 - 0.688722 = 0.311278 bits
+  Variable Price | H(Price)=0.811278 bits
+    Price=£: n=3, clases={No=1, Yes=2}, H(Sv)=0.918296, peso=3/4, aporte=0.688722
+    Price=£££: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/4, aporte=0.000000
+    H(Wait | Price)=0.688722 | IG=1.000000 - 0.688722 = 0.311278 bits
+  Variable Raining | H(Raining)=0.811278 bits
+    Raining=No: n=3, clases={No=2, Yes=1}, H(Sv)=0.918296, peso=3/4, aporte=0.688722
+    Raining=Yes: n=1, clases={Yes=1}, H(Sv)=0.000000, peso=1/4, aporte=0.000000
+    H(Wait | Raining)=0.688722 | IG=1.000000 - 0.688722 = 0.311278 bits
+  Variable Reservation | H(Reservation)=0.811278 bits
+    Reservation=No: n=3, clases={No=1, Yes=2}, H(Sv)=0.918296, peso=3/4, aporte=0.688722
+    Reservation=Yes: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/4, aporte=0.000000
+    H(Wait | Reservation)=0.688722 | IG=1.000000 - 0.688722 = 0.311278 bits
+  Variable Type | H(Type)=1.500000 bits
+    Type=Thai: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/4, aporte=0.500000
+    Type=Italian: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/4, aporte=0.000000
+    Type=Burger: n=1, clases={Yes=1}, H(Sv)=0.000000, peso=1/4, aporte=0.000000
+    H(Wait | Type)=0.500000 | IG=1.000000 - 0.500000 = 0.500000 bits
+  Variable Wait Esttimate | H(Wait Esttimate)=1.000000 bits
+    Wait Esttimate=30-60: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/4, aporte=0.500000
+    Wait Esttimate=10-30: n=2, clases={Yes=1, No=1}, H(Sv)=1.000000, peso=2/4, aporte=0.500000
+    H(Wait | Wait Esttimate)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  ELEGIDA: Type (IG=0.500000)
+
+NODO RAÍZ / Patrons=Full / Hungry=Yes / Type=Thai | n=2 | clases={No=1, Yes=1} | H(S)=1.000000 bits
+  Variable Alternate | H(Alternate)=0.000000 bits
+    Alternate=Yes: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/2, aporte=1.000000
+    H(Wait | Alternate)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  Variable Bar | H(Bar)=0.000000 bits
+    Bar=No: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/2, aporte=1.000000
+    H(Wait | Bar)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  Variable Fri/Sat | H(Fri/Sat)=1.000000 bits
+    Fri/Sat=No: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    Fri/Sat=Yes: n=1, clases={Yes=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    H(Wait | Fri/Sat)=0.000000 | IG=1.000000 - 0.000000 = 1.000000 bits
+  Variable Price | H(Price)=0.000000 bits
+    Price=£: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/2, aporte=1.000000
+    H(Wait | Price)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  Variable Raining | H(Raining)=1.000000 bits
+    Raining=No: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    Raining=Yes: n=1, clases={Yes=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    H(Wait | Raining)=0.000000 | IG=1.000000 - 0.000000 = 1.000000 bits
+  Variable Reservation | H(Reservation)=0.000000 bits
+    Reservation=No: n=2, clases={No=1, Yes=1}, H(Sv)=1.000000, peso=2/2, aporte=1.000000
+    H(Wait | Reservation)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  Variable Wait Esttimate | H(Wait Esttimate)=1.000000 bits
+    Wait Esttimate=30-60: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    Wait Esttimate=10-30: n=1, clases={Yes=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    H(Wait | Wait Esttimate)=0.000000 | IG=1.000000 - 0.000000 = 1.000000 bits
+  ELEGIDA: Fri/Sat (IG=1.000000)
+
+NODO RAÍZ / Patrons=Full / Hungry=Yes / Type=Thai / Fri/Sat=No | n=1 | clases={No=1} | H(S)=0.000000 bits
+Hoja pura: No
+
+NODO RAÍZ / Patrons=Full / Hungry=Yes / Type=Thai / Fri/Sat=Yes | n=1 | clases={Yes=1} | H(S)=0.000000 bits
+Hoja pura: Yes
+
+NODO RAÍZ / Patrons=Full / Hungry=Yes / Type=Italian | n=1 | clases={No=1} | H(S)=0.000000 bits
+Hoja pura: No
+
+NODO RAÍZ / Patrons=Full / Hungry=Yes / Type=Burger | n=1 | clases={Yes=1} | H(S)=0.000000 bits
+Hoja pura: Yes
+
+NODO RAÍZ / Patrons=Full / Hungry=No | n=2 | clases={No=2} | H(S)=0.000000 bits
+Hoja pura: No
+
+NODO RAÍZ / Patrons=None | n=2 | clases={No=2} | H(S)=0.000000 bits
+Hoja pura: No
+
+ÁRBOL DE DECISIÓN
+[Patrons]
+  Some -> Clase = Yes
+  Full -> [Hungry]
+    Yes -> [Type]
+      Thai -> [Fri/Sat]
+        No -> Clase = No
+        Yes -> Clase = Yes
+      Italian -> Clase = No
+      Burger -> Clase = Yes
+    No -> Clase = No
+  None -> Clase = No
+
+COMPROBACIÓN SOBRE DATOS DE ENTRENAMIENTO
+  Registro 1: real=Yes, predicción=Yes, OK
+  Registro 2: real=No, predicción=No, OK
+  Registro 3: real=Yes, predicción=Yes, OK
+  Registro 4: real=Yes, predicción=Yes, OK
+  Registro 5: real=No, predicción=No, OK
+  Registro 6: real=Yes, predicción=Yes, OK
+  Registro 7: real=No, predicción=No, OK
+  Registro 8: real=Yes, predicción=Yes, OK
+  Registro 9: real=No, predicción=No, OK
+  Registro 10: real=No, predicción=No, OK
+  Registro 11: real=No, predicción=No, OK
+  Registro 12: real=Yes, predicción=Yes, OK
+Aciertos de entrenamiento: 12/12 (100.00%)
+Esta comprobación no mide la capacidad de generalizar a datos nuevos.

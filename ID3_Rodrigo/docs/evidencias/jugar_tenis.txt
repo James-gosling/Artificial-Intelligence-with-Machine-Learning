@@ -1,0 +1,100 @@
+PROYECTO ID3 — Actividad 2
+Rodrigo Valdespino Vertiz | ID: 00520621
+Carrera: Ingeniería en Tecnologías de la Información y Negocios Digitales
+Archivo: data/jugar_tenis.csv | Registros: 14 | Objetivo: Jugar
+H(S)=-sum(p*log2(p)); H(Y|A)=sum(|Sv|/|S|*H(Sv)); IG=H(S)-H(Y|A)
+
+NODO RAÍZ | n=14 | clases={No=5, Sí=9} | H(S)=0.940286 bits
+  Variable Clima | H(Clima)=1.577406 bits
+    Clima=Soleado: n=5, clases={No=3, Sí=2}, H(Sv)=0.970951, peso=5/14, aporte=0.346768
+    Clima=Nublado: n=4, clases={Sí=4}, H(Sv)=0.000000, peso=4/14, aporte=0.000000
+    Clima=Lluvia: n=5, clases={Sí=3, No=2}, H(Sv)=0.970951, peso=5/14, aporte=0.346768
+    H(Jugar | Clima)=0.693536 | IG=0.940286 - 0.693536 = 0.246750 bits
+  Variable Temperatura | H(Temperatura)=1.556657 bits
+    Temperatura=Alta: n=4, clases={No=2, Sí=2}, H(Sv)=1.000000, peso=4/14, aporte=0.285714
+    Temperatura=Templada: n=6, clases={Sí=4, No=2}, H(Sv)=0.918296, peso=6/14, aporte=0.393555
+    Temperatura=Baja: n=4, clases={Sí=3, No=1}, H(Sv)=0.811278, peso=4/14, aporte=0.231794
+    H(Jugar | Temperatura)=0.911063 | IG=0.940286 - 0.911063 = 0.029223 bits
+  Variable Humedad | H(Humedad)=1.000000 bits
+    Humedad=Alta: n=7, clases={No=4, Sí=3}, H(Sv)=0.985228, peso=7/14, aporte=0.492614
+    Humedad=Normal: n=7, clases={Sí=6, No=1}, H(Sv)=0.591673, peso=7/14, aporte=0.295836
+    H(Jugar | Humedad)=0.788450 | IG=0.940286 - 0.788450 = 0.151836 bits
+  Variable Viento | H(Viento)=0.985228 bits
+    Viento=Débil: n=8, clases={No=2, Sí=6}, H(Sv)=0.811278, peso=8/14, aporte=0.463587
+    Viento=Fuerte: n=6, clases={No=3, Sí=3}, H(Sv)=1.000000, peso=6/14, aporte=0.428571
+    H(Jugar | Viento)=0.892159 | IG=0.940286 - 0.892159 = 0.048127 bits
+  ELEGIDA: Clima (IG=0.246750)
+
+NODO RAÍZ / Clima=Soleado | n=5 | clases={No=3, Sí=2} | H(S)=0.970951 bits
+  Variable Temperatura | H(Temperatura)=1.521928 bits
+    Temperatura=Alta: n=2, clases={No=2}, H(Sv)=0.000000, peso=2/5, aporte=0.000000
+    Temperatura=Templada: n=2, clases={No=1, Sí=1}, H(Sv)=1.000000, peso=2/5, aporte=0.400000
+    Temperatura=Baja: n=1, clases={Sí=1}, H(Sv)=0.000000, peso=1/5, aporte=0.000000
+    H(Jugar | Temperatura)=0.400000 | IG=0.970951 - 0.400000 = 0.570951 bits
+  Variable Humedad | H(Humedad)=0.970951 bits
+    Humedad=Alta: n=3, clases={No=3}, H(Sv)=0.000000, peso=3/5, aporte=0.000000
+    Humedad=Normal: n=2, clases={Sí=2}, H(Sv)=0.000000, peso=2/5, aporte=0.000000
+    H(Jugar | Humedad)=0.000000 | IG=0.970951 - 0.000000 = 0.970951 bits
+  Variable Viento | H(Viento)=0.970951 bits
+    Viento=Débil: n=3, clases={No=2, Sí=1}, H(Sv)=0.918296, peso=3/5, aporte=0.550978
+    Viento=Fuerte: n=2, clases={No=1, Sí=1}, H(Sv)=1.000000, peso=2/5, aporte=0.400000
+    H(Jugar | Viento)=0.950978 | IG=0.970951 - 0.950978 = 0.019973 bits
+  ELEGIDA: Humedad (IG=0.970951)
+
+NODO RAÍZ / Clima=Soleado / Humedad=Alta | n=3 | clases={No=3} | H(S)=0.000000 bits
+Hoja pura: No
+
+NODO RAÍZ / Clima=Soleado / Humedad=Normal | n=2 | clases={Sí=2} | H(S)=0.000000 bits
+Hoja pura: Sí
+
+NODO RAÍZ / Clima=Nublado | n=4 | clases={Sí=4} | H(S)=0.000000 bits
+Hoja pura: Sí
+
+NODO RAÍZ / Clima=Lluvia | n=5 | clases={Sí=3, No=2} | H(S)=0.970951 bits
+  Variable Temperatura | H(Temperatura)=0.970951 bits
+    Temperatura=Templada: n=3, clases={Sí=2, No=1}, H(Sv)=0.918296, peso=3/5, aporte=0.550978
+    Temperatura=Baja: n=2, clases={Sí=1, No=1}, H(Sv)=1.000000, peso=2/5, aporte=0.400000
+    H(Jugar | Temperatura)=0.950978 | IG=0.970951 - 0.950978 = 0.019973 bits
+  Variable Humedad | H(Humedad)=0.970951 bits
+    Humedad=Alta: n=2, clases={Sí=1, No=1}, H(Sv)=1.000000, peso=2/5, aporte=0.400000
+    Humedad=Normal: n=3, clases={Sí=2, No=1}, H(Sv)=0.918296, peso=3/5, aporte=0.550978
+    H(Jugar | Humedad)=0.950978 | IG=0.970951 - 0.950978 = 0.019973 bits
+  Variable Viento | H(Viento)=0.970951 bits
+    Viento=Débil: n=3, clases={Sí=3}, H(Sv)=0.000000, peso=3/5, aporte=0.000000
+    Viento=Fuerte: n=2, clases={No=2}, H(Sv)=0.000000, peso=2/5, aporte=0.000000
+    H(Jugar | Viento)=0.000000 | IG=0.970951 - 0.000000 = 0.970951 bits
+  ELEGIDA: Viento (IG=0.970951)
+
+NODO RAÍZ / Clima=Lluvia / Viento=Débil | n=3 | clases={Sí=3} | H(S)=0.000000 bits
+Hoja pura: Sí
+
+NODO RAÍZ / Clima=Lluvia / Viento=Fuerte | n=2 | clases={No=2} | H(S)=0.000000 bits
+Hoja pura: No
+
+ÁRBOL DE DECISIÓN
+[Clima]
+  Soleado -> [Humedad]
+    Alta -> Clase = No
+    Normal -> Clase = Sí
+  Nublado -> Clase = Sí
+  Lluvia -> [Viento]
+    Débil -> Clase = Sí
+    Fuerte -> Clase = No
+
+COMPROBACIÓN SOBRE DATOS DE ENTRENAMIENTO
+  Registro 1: real=No, predicción=No, OK
+  Registro 2: real=No, predicción=No, OK
+  Registro 3: real=Sí, predicción=Sí, OK
+  Registro 4: real=Sí, predicción=Sí, OK
+  Registro 5: real=Sí, predicción=Sí, OK
+  Registro 6: real=No, predicción=No, OK
+  Registro 7: real=Sí, predicción=Sí, OK
+  Registro 8: real=No, predicción=No, OK
+  Registro 9: real=Sí, predicción=Sí, OK
+  Registro 10: real=Sí, predicción=Sí, OK
+  Registro 11: real=Sí, predicción=Sí, OK
+  Registro 12: real=Sí, predicción=Sí, OK
+  Registro 13: real=Sí, predicción=Sí, OK
+  Registro 14: real=No, predicción=No, OK
+Aciertos de entrenamiento: 14/14 (100.00%)
+Esta comprobación no mide la capacidad de generalizar a datos nuevos.

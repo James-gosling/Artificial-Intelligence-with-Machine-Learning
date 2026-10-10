@@ -1,0 +1,41 @@
+OK: Archivo proporcionado data.csv: raíz Outlook y 14/14
+OK: Archivo proporcionado Play.csv: mismos datos, 14/14
+OK: Archivo proporcionado play7.csv: Patrons, IG y 12/12
+OK: Archivo proporcionado play8.csv: Income, tres clases y 14/14
+OK: Entropía inicial de tenis: 0.940286
+OK: Ganancia de Clima: 0.246750
+OK: Ganancia de Temperatura: 0.029223
+OK: Ganancia de Humedad: 0.151836
+OK: Ganancia de Viento: 0.048127
+OK: Árbol de tenis completo coincide con solución conocida
+OK: Tenis: 14/14 predicciones de entrenamiento
+OK: Combinación no incluida en tenis sigue regla conocida
+OK: XOR: ganancias iniciales cero
+OK: XOR: 4/4 pese a ganancia inicial cero
+OK: Empate de atributos respeta encabezado
+OK: CSV con punto y coma, multiclase: 6/6
+OK: Datos contradictorios terminan con mayoría: 2/3
+OK: Clase pura produce una hoja
+OK: Sin atributos y empate: primera clase encontrada
+OK: Valor desconocido usa mayoría del nodo
+OK: Atributo ausente usa mayoría del nodo
+OK: Objetivo en primera columna por nombre
+OK: CSV BOM, CRLF, comillas escapadas y coma interna
+OK: CSV admite salto de línea entre comillas
+OK: CSV ignora líneas vacías y admite final sin salto
+OK: Rechaza CSV vacío
+OK: Rechaza archivo sin registros
+OK: Rechaza encabezados duplicados
+OK: Rechaza encabezado vacío
+OK: Rechaza anchura de fila incorrecta
+OK: Rechaza valores faltantes
+OK: Rechaza interrogación como dato faltante
+OK: Rechaza comillas abiertas
+OK: Rechaza texto tras cierre de comillas
+OK: Rechaza objetivo inexistente
+OK: Traza incluye entropías, pesos y decisión
+OK: CLI ejecuta el archivo por defecto
+OK: CLI devuelve error por archivo inexistente
+OK: CLI informa uso para argumentos inválidos
+
+Resultado: 39 aprobadas, 0 fallidas.

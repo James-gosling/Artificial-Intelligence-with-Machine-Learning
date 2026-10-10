@@ -1,0 +1,15 @@
+Credit History,Debt,Colleteral,Income,risk
+bad,high,none,$0 to $15k,high
+unknown,high,none,$15 to $35k,high
+unknown,low,none,$15 to $35k,moderate
+unknown,low,none,$0 to $15k,high
+unknown,low,none,over $35k,low
+unknown,low,adequate,over $35k,low
+bad,low,none,$0 to $15k,high
+bad,low,adequate,over $35k,moderate
+good,low,none,over $35k,low
+good,high,adequate,over $35k,low
+good,high,none,$0 to $15k,high
+good,high,none,$15 to $35k,moderate
+good,high,none,over $35k,low
+bad,high,none,$15 to $35k,high

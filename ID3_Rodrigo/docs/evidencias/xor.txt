@@ -1,0 +1,59 @@
+PROYECTO ID3 — Actividad 2
+Rodrigo Valdespino Vertiz | ID: 00520621
+Carrera: Ingeniería en Tecnologías de la Información y Negocios Digitales
+Archivo: data/xor.csv | Registros: 4 | Objetivo: Clase
+H(S)=-sum(p*log2(p)); H(Y|A)=sum(|Sv|/|S|*H(Sv)); IG=H(S)-H(Y|A)
+
+NODO RAÍZ | n=4 | clases={No=2, Sí=2} | H(S)=1.000000 bits
+  Variable A | H(A)=1.000000 bits
+    A=0: n=2, clases={No=1, Sí=1}, H(Sv)=1.000000, peso=2/4, aporte=0.500000
+    A=1: n=2, clases={Sí=1, No=1}, H(Sv)=1.000000, peso=2/4, aporte=0.500000
+    H(Clase | A)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  Variable B | H(B)=1.000000 bits
+    B=0: n=2, clases={No=1, Sí=1}, H(Sv)=1.000000, peso=2/4, aporte=0.500000
+    B=1: n=2, clases={Sí=1, No=1}, H(Sv)=1.000000, peso=2/4, aporte=0.500000
+    H(Clase | B)=1.000000 | IG=1.000000 - 1.000000 = 0.000000 bits
+  ELEGIDA: A (IG=0.000000)
+
+NODO RAÍZ / A=0 | n=2 | clases={No=1, Sí=1} | H(S)=1.000000 bits
+  Variable B | H(B)=1.000000 bits
+    B=0: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    B=1: n=1, clases={Sí=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    H(Clase | B)=0.000000 | IG=1.000000 - 0.000000 = 1.000000 bits
+  ELEGIDA: B (IG=1.000000)
+
+NODO RAÍZ / A=0 / B=0 | n=1 | clases={No=1} | H(S)=0.000000 bits
+Hoja pura: No
+
+NODO RAÍZ / A=0 / B=1 | n=1 | clases={Sí=1} | H(S)=0.000000 bits
+Hoja pura: Sí
+
+NODO RAÍZ / A=1 | n=2 | clases={Sí=1, No=1} | H(S)=1.000000 bits
+  Variable B | H(B)=1.000000 bits
+    B=0: n=1, clases={Sí=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    B=1: n=1, clases={No=1}, H(Sv)=0.000000, peso=1/2, aporte=0.000000
+    H(Clase | B)=0.000000 | IG=1.000000 - 0.000000 = 1.000000 bits
+  ELEGIDA: B (IG=1.000000)
+
+NODO RAÍZ / A=1 / B=0 | n=1 | clases={Sí=1} | H(S)=0.000000 bits
+Hoja pura: Sí
+
+NODO RAÍZ / A=1 / B=1 | n=1 | clases={No=1} | H(S)=0.000000 bits
+Hoja pura: No
+
+ÁRBOL DE DECISIÓN
+[A]
+  0 -> [B]
+    0 -> Clase = No
+    1 -> Clase = Sí
+  1 -> [B]
+    0 -> Clase = Sí
+    1 -> Clase = No
+
+COMPROBACIÓN SOBRE DATOS DE ENTRENAMIENTO
+  Registro 1: real=No, predicción=No, OK
+  Registro 2: real=Sí, predicción=Sí, OK
+  Registro 3: real=Sí, predicción=Sí, OK
+  Registro 4: real=No, predicción=No, OK
+Aciertos de entrenamiento: 4/4 (100.00%)
+Esta comprobación no mide la capacidad de generalizar a datos nuevos.
